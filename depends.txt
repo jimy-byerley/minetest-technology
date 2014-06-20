@@ -1,0 +1,4 @@
+default
+moreores
+explosion
+mesecons

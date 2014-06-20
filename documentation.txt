@@ -1,0 +1,35 @@
+This mod add computers and screen to minetest
+made by jimy byerley   jimy.byerley@gmail.com
+It is GNU, do it what you want !
+
+==[ crafting ]==========================================
+
+plastic : put cotton in furnace
+
+wire :
+	plastic   steel ingot
+
+button :
+	plastic
+	steel ingot
+	steel ingot
+
+electronic card :
+	steel_ingot
+	plastic
+
+modern screen :
+	plastic
+	plastic   electronic card  glass
+	plastic
+
+keyboard :
+	button  button  button
+	button  button  button
+	button  button  button
+
+laptop :
+	modern screen
+	electronic card
+	keyboard
+
