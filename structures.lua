@@ -24,15 +24,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'technology:armature_v 5',
-	recipe = {
-		{'default:steel_ingot', '', 'default:steel_ingot'},
-		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-		{'default:steel_ingot', '', 'default:steel_ingot'},
-	}
-})
-
-minetest.register_craft({
 	output = 'technology:armature_v',
 	recipe = {
 		{'technology:armature_h'},
@@ -257,6 +248,15 @@ minetest.register_node("technology:floor", {
     sounds = metal_footstep,
 })
 
+minetest.register_craft({
+	output = 'technology:stairs 4',
+	recipe = {
+		{'', '', bronze_ingot},
+		{'', bronze_ingot, ''},
+		{bronze_ingot, '', ''},
+	}
+})
+
 
 minetest.register_node("technology:stairs", {
     description = "Bridge stairs",
@@ -349,6 +349,16 @@ minetest.register_node("technology:triangle", {
     sounds = metal_footstep,
 })
 
+
+minetest.register_craft({
+	output = 'technology:ladder 16',
+	recipe = {
+		{bronze_ingot,           '', bronze_ingot},
+		{bronze_ingot, bronze_ingot, bronze_ingot},
+		{bronze_ingot,           '', bronze_ingot},
+	}
+})
+
 minetest.register_node("technology:ladder", {
   description = "bronze ladder",
   node_placement_prediction = "",
@@ -372,6 +382,15 @@ minetest.register_node("technology:ladder", {
   groups = {paffly=2, mecanic=1},
   on_punch = metal_punch,
   sounds = metal_footstep,
+})
+
+
+minetest.register_craft({
+	output = 'technology:ladder_closed',
+	recipe = {
+		{'technology:ladder'},
+		{bronze_ingot},
+	}
 })
 
 minetest.register_node("technology:ladder_closed", {
