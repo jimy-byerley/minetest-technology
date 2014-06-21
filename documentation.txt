@@ -1,6 +1,6 @@
 This mod add computers and screen to minetest
 made by jimy byerley   jimy.byerley@gmail.com
-It is GNU, do it what you want !
+License is GNU GPL v2, do it what you want !
 
 ==[ crafting ]==========================================
 
@@ -22,14 +22,3 @@ modern screen :
 	plastic
 	plastic   electronic card  glass
 	plastic
-
-keyboard :
-	button  button  button
-	button  button  button
-	button  button  button
-
-laptop :
-	modern screen
-	electronic card
-	keyboard
-

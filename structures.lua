@@ -2,6 +2,10 @@
  including : concrete, steel armature, grid, bridge, support, flat
 ]]
 
+local bronze_ingot = "default:bronze_ingot"
+if minetest.registered_nodes[bronze_ingot] == nil then
+	bronze_ingot = "moreores:bronze_ingot"
+end
 
 minetest.register_craft({
 	output = 'technology:concrete',
@@ -13,9 +17,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'technology:armature_h 5',
 	recipe = {
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot', 'moreores:bronze_ingot'},
-		{'', 'moreores:bronze_ingot', ''},
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot', 'moreores:bronze_ingot'},
+		{bronze_ingot, bronze_ingot, bronze_ingot},
+		{'', bronze_ingot, ''},
+		{bronze_ingot, bronze_ingot, bronze_ingot},
 	}
 })
 
@@ -176,9 +180,9 @@ minetest.register_node("technology:grid_h", {
 minetest.register_craft({
 	output = 'technology:grid_v 10',
 	recipe = {
-		{'', 'moreores:bronze_ingot', ''},
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot', 'moreores:bronze_ingot'},
-		{'', 'moreores:bronze_ingot', ''},
+		{'', bronze_ingot, ''},
+		{bronze_ingot, bronze_ingot, bronze_ingot},
+		{'', bronze_ingot, ''},
 	}
 })
 
@@ -195,15 +199,15 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'technology:floor 2',
 	recipe = {
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot'},
+		{bronze_ingot, bronze_ingot},
 	}
 })
 
 minetest.register_craft({
 	output = 'technology:edge 10',
 	recipe = {
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot'},
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot'},
+		{bronze_ingot, bronze_ingot},
+		{bronze_ingot, bronze_ingot},
 	}
 })
 
@@ -224,8 +228,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'technology:triangle 4',
 	recipe = {
-		{'moreores:bronze_ingot', 'moreores:bronze_ingot'},
-		{'', 'moreores:bronze_ingot'},
+		{bronze_ingot, bronze_ingot},
+		{'', bronze_ingot},
 	}
 })
 
