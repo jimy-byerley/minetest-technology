@@ -51,7 +51,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'technology:lamp_small 5',
+	output = 'technology:small_lamp 5',
 	recipe = {
 		{'glass:bottle_empty'},
 		{'default:steel_ingot'},
@@ -128,14 +128,14 @@ minetest.register_node("technology:12V_battery", {
     tiles = {"battery_top.png", "battery_top.png", "battery_side.png", "battery_side.png", "battery_side.png", "battery_back.png"},
     walkable = true,
     groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,pinch=1,generator=1},
-    electric = {generated = 12.5},
+    electric = {generated = 12},
     on_construct = function(pos)
     	local meta = minetest.env:get_meta(pos)
-    	meta:set_string("infotext", "\"12.5V DC BATTERY\"")
+    	meta:set_string("infotext", "\"12V DC BATTERY\"")
     end,
 })
 
-minetest.register_node("technology:lamp_small", {
+minetest.register_node("technology:small_lamp", {
 	description = "Electric lamp small",
 	drawtype = "torchlike",
 	tiles = {"lamp_small_floor.png", "lamp_small_ceiling.png", "lamp_small.png"},
@@ -162,14 +162,14 @@ minetest.register_node("technology:lamp_small", {
 				minetest.env:set_node(pos, {name="fire:basic_flame"})
 			else
 				local node = minetest.env:get_node(pos)
-				node.name = "technology:lamp_small_on"
+				node.name = "technology:small_lamp_on"
 				minetest.env:set_node(pos, node)
 			end
 		end,
 	}
 })
 
-minetest.register_node("technology:lamp_small_on", {
+minetest.register_node("technology:small_lamp_on", {
 	description = "Electric lamp small",
 	drawtype = "torchlike",
 	tiles = {"lamp_small_on_floor.png", "lamp_small_on_ceiling.png", "lamp_small_on.png"},
@@ -187,13 +187,13 @@ minetest.register_node("technology:lamp_small_on", {
 		wall_side = {-0.5, -0.3, -0.1, -0.5+0.3, 0.3, 0.1},
 	},
 	legacy_wallmounted = true,
-	drop = "technology:lamp_small",
+	drop = "technology:small_lamp",
 	groups = {choppy=2,dig_immediate=3,flammable=1,attached_node=1,electric=1},
 	electric = {
 		action = function(pos, energy)
 			if energy < 10 then
 				local node = minetest.env:get_node(pos)
-				node.name = "technology:lamp_small"
+				node.name = "technology:small_lamp"
 				minetest.env:set_node(pos, node)
 			elseif energy > 80 then
 				minetest.env:set_node(pos, {name="fire:basic_flame"})
