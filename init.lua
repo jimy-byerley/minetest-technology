@@ -25,5 +25,3 @@ dofile(minetest.get_modpath("technology").."/electric_nodes.lua")
 dofile(minetest.get_modpath("technology").."/aircraft.lua")
 
 dofile(minetest.get_modpath("technology").."/screen.lua")
-
-

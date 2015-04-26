@@ -1,4 +1,3 @@
 default
 moreores
 mesecons
-farming

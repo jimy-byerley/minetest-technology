@@ -1,6 +1,6 @@
 This mod add computers and screen to minetest
 made by jimy byerley   jimy.byerley@gmail.com
-License is GNU GPL v2
+License is GNU GPL v2, do it what you want !
 
 ==[ crafting ]==========================================
 
