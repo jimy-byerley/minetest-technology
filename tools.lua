@@ -27,7 +27,7 @@ minetest.register_craft({
 		{'', '', 'technology:plastic'},
 	}
 })
-
+--[[
 minetest.register_tool("technology:jackhammer", {
 	description = "Jackhammer",
 	inventory_image = "jackhammer.png",
@@ -38,7 +38,7 @@ minetest.register_tool("technology:jackhammer", {
 		}
 	},
 })
-
+]]
 minetest.register_node("technology:jackhammer", {
     description = "Jackhammer",
     inventory_image = "jackhammer.png",
