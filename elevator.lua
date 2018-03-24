@@ -171,8 +171,8 @@ minetest.register_entity(elevator_entity, elevator)
 
 minetest.register_craftitem("technology:elevator", {
 	description = "Elevator",
-	inventory_image="technology_elevator.png",
-	wield_image = "technology_elevator.png",
+	inventory_image="technology_elevator_item.png",
+	wield_image = "technology_elevator_item.png",
 	wield_scale = {x=6, y=6, z=2},
 	
 	on_place = function(itemstack, placer, pointed_thing)
@@ -207,8 +207,6 @@ local zmin = -0.5
 local zmax = 0.5
 minetest.register_node("technology:elevator_rail", {
     description = "Vertical rail for elevator",
-    --inventory_image = "technology_elevator_rail.png",
-    --wield_image = "technology_elevator_rail.png",
     node_placement_prediction = "",
     paramtype = "light",
     paramtype2 = "facedir",
@@ -232,13 +230,13 @@ minetest.register_node("technology:elevator_rail", {
 		"technology_elevator_rail_front.png" --front
 	},
     walkable = true,
-    groups = {mecanic=1, oddly_breakable_by_hand=1},
+    groups = {mechanic=1, oddly_breakable_by_hand=1},
     on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
 technology.register_plan("ELEVATOR", "technology:elevator", nil, {
-	"technic:hv_transformer",
+	"technic:hv_transformer 1",
 	"technic:motor 1",
 	"technology:wire 2",
 	"default:bronze_ingot 6",

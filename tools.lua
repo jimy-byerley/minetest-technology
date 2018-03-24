@@ -14,7 +14,7 @@ minetest.register_tool("technology:wrench", {
 	tool_capabilities = {
 		max_drop_level=1,
 		groupcaps={
-			mecanic={times={[1]=1.00, [2]=2.60, [3]=4.00}, uses=0, maxlevel=3},
+			mechanic={times={[1]=1.00, [2]=2.60, [3]=4.00}, uses=0, maxlevel=3},
 		}
 	},
 })
