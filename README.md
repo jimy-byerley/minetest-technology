@@ -9,7 +9,7 @@ A minetest mod which provide some hi-tech stuff : flat screen, elevators, aircra
 Install
 =======
 
-As other minetest mod : extract the zip file as `"technology"` in the `games/minetest_game/mods directory`.
+As other minetest mod : extract the zip file as `"technology"` in the `games/minetest_game/mods directory` or in `mods` directory.
 
 Other
 =====
