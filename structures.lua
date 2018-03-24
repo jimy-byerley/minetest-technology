@@ -71,7 +71,7 @@ end
 
 local metal_footstep = {
 	footstep = {name="metal_footstep", gain=0.8},
-	dug = {name="", gain = 0.8},
+	dig = {name="metal_footstep", gain = 0.8},
 }
 
 minetest.register_node("technology:armature_h", {
@@ -93,8 +93,8 @@ minetest.register_node("technology:armature_h", {
     }},
     tiles = {"steel_armature_top.png", "steel_armature_top.png", "steel_armature_top.png", "steel_armature_top.png", "steel_armature_h_side.png", "steel_armature_h_side.png"},
     walkable = true,
-    groups = {mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -117,8 +117,8 @@ minetest.register_node("technology:armature_v", {
     }},
     tiles = {"steel_armature_top.png", "steel_armature_top.png", "steel_armature_top.png", "steel_armature_top.png", "steel_armature_v_side.png", "steel_armature_v_side.png"},
     walkable = true,
-    groups = {mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1,},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -140,8 +140,8 @@ minetest.register_node("technology:grid_v", {
     }},
     tiles = {"bronze_grid_side.png", "bronze_grid_side.png", "bronze_grid_side.png", "bronze_grid_side.png", "bronze_grid_front.png", "steel_grid_front.png"},
     walkable = true,
-    groups = {mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -163,8 +163,8 @@ minetest.register_node("technology:grid_h", {
     }},
     tiles = {"bronze_grid_side.png", "bronze_grid_front.png", "bronze_grid_side.png", "bronze_grid_front.png", "bronze_grid_side.png", "steel_grid_side.png"},
     walkable = true,
-    groups = {mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -243,8 +243,8 @@ minetest.register_node("technology:floor", {
     }},
     tiles = {"floor_top.png", "floor_bottom.png", "floor_side.png", "floor_side.png", "floor_side.png", "floor_side.png"},
     walkable = true,
-    groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -274,8 +274,8 @@ minetest.register_node("technology:stairs", {
     }},
     tiles = {"floor_top.png", "floor_bottom.png", "floor_side.png", "floor_side.png", "floor_side.png", "floor_side.png"},
     walkable = true,
-    groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -296,8 +296,8 @@ minetest.register_node("technology:edge", {
     }},
     tiles = {"edge_side.png", "edge_side.png", "edge_side.png", "edge_side.png", "edge_side.png", "edge_side.png"},
     walkable = true,
-    groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -322,8 +322,8 @@ minetest.register_node("technology:edge_angle", {
     }},
     tiles = {"edge_side.png", "edge_side.png", "edge_side.png", "edge_side.png", "edge_side.png", "edge_side.png"},
     walkable = true,
-    groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
     drop = "technology:edge",
 })
@@ -344,8 +344,8 @@ minetest.register_node("technology:triangle", {
     }},
     tiles = {"triangle_side.png", "triangle_side.png", "triangle_right.png", "triangle_left.png", "triangle_side.png", "triangle_side.png"},
     walkable = true,
-    groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-    on_punch = metal_punch,
+    groups = {cracky=1,mechanic=1},
+    --on_punch = metal_punch,
     sounds = metal_footstep,
 })
 
@@ -360,28 +360,28 @@ minetest.register_craft({
 })
 
 minetest.register_node("technology:ladder", {
-  description = "bronze ladder",
-  node_placement_prediction = "",
-  paramtype = "light",
-  paramtype2 = "facedir",
-  drawtype = "nodebox",
-  node_box = {type = "fixed", fixed = {
-		{-0.3, -0.5, 0.4,    -0.2, 0.5,  0.5},
-		{ 0.3, -0.5, 0.4,     0.2, 0.5,  0.5},
-		
-		{ -0.2, -0.36, 0.42,   0.2, -0.3,  0.48},
-		{ -0.2,  0.36, 0.42,   0.2,  0.3,  0.48},
-		{ -0.2, -0.03, 0.42,   0.2,  0.03, 0.48},
-  }},
-  selection_box = {type = "fixed", fixed = {
-		{-0.3, -0.5, 0.4,     0.3, 0.5, 0.5},
-  }},
-  tiles = {"technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png"},
-  walkable = true,
+	description = "bronze ladder",
+	node_placement_prediction = "",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	drawtype = "nodebox",
+	node_box = {type = "fixed", fixed = {
+			{-0.3, -0.5, 0.4,    -0.2, 0.5,  0.5},
+			{ 0.3, -0.5, 0.4,     0.2, 0.5,  0.5},
+			
+			{ -0.2, -0.36, 0.42,   0.2, -0.3,  0.48},
+			{ -0.2,  0.36, 0.42,   0.2,  0.3,  0.48},
+			{ -0.2, -0.03, 0.42,   0.2,  0.03, 0.48},
+	}},
+	selection_box = {type = "fixed", fixed = {
+			{-0.3, -0.5, 0.4,     0.3, 0.5, 0.5},
+	}},
+	tiles = {"technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png"},
+	walkable = true,
 	climbable = true,
-  groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-  on_punch = metal_punch,
-  sounds = metal_footstep,
+	groups = {cracky=1,mechanic=1},
+	--on_punch = metal_punch,
+	sounds = metal_footstep,
 })
 
 
@@ -394,36 +394,36 @@ minetest.register_craft({
 })
 
 minetest.register_node("technology:ladder_closed", {
-  description = "bronze ladder closed",
-  node_placement_prediction = "",
-  paramtype = "light",
-  paramtype2 = "facedir",
-  drawtype = "nodebox",
-  node_box = {type = "fixed", fixed = {
-  	-- barre verticales latérales
-		{-0.3, -0.5, 0.4,    -0.2, 0.5,  0.5},
-		{ 0.3, -0.5, 0.4,     0.2, 0.5,  0.5},
-		-- barres horizontales
-		{ -0.2, -0.36, 0.42,   0.2, -0.3,  0.48},
-		{ -0.2,  0.36, 0.42,   0.2,  0.3,  0.48},
-		{ -0.2, -0.03, 0.42,   0.2,  0.03, 0.48},
-		-- garde-corps lateraux
-		{-0.45, -0.5, -0.35,    -0.4,  -0.4,  0.5},
-		{ 0.4,  -0.5, -0.35,     0.45, -0.4,  0.5},
-		{-0.4,  -0.5, -0.3,      0.4,  -0.4, -0.35},
-		-- tige entre garde corps
-		{-0.05, -0.5, -0.35,     0.05,  0.5, -0.3},
-		{-0.45, -0.5, -0.1,     -0.4,   0.5, -0.15},
-		{ 0.45, -0.5, -0.1,      0.4,   0.5, -0.15},
-  }},
-  selection_box = {type = "fixed", fixed = {
-		{-0.5, -0.5, -0.5,     0.5, 0.5, 0.5},
-  }},
-  tiles = {"technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png"},
-  walkable = true,
+	description = "bronze ladder closed",
+	node_placement_prediction = "",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	drawtype = "nodebox",
+	node_box = {type = "fixed", fixed = {
+		-- barre verticales latérales
+			{-0.3, -0.5, 0.4,    -0.2, 0.5,  0.5},
+			{ 0.3, -0.5, 0.4,     0.2, 0.5,  0.5},
+			-- barres horizontales
+			{ -0.2, -0.36, 0.42,   0.2, -0.3,  0.48},
+			{ -0.2,  0.36, 0.42,   0.2,  0.3,  0.48},
+			{ -0.2, -0.03, 0.42,   0.2,  0.03, 0.48},
+			-- garde-corps lateraux
+			{-0.45, -0.5, -0.35,    -0.4,  -0.4,  0.5},
+			{ 0.4,  -0.5, -0.35,     0.45, -0.4,  0.5},
+			{-0.4,  -0.5, -0.3,      0.4,  -0.4, -0.35},
+			-- tige entre garde corps
+			{-0.05, -0.5, -0.35,     0.05,  0.5, -0.3},
+			{-0.45, -0.5, -0.1,     -0.4,   0.5, -0.15},
+			{ 0.45, -0.5, -0.1,      0.4,   0.5, -0.15},
+	}},
+	selection_box = {type = "fixed", fixed = {
+			{-0.5, -0.5, -0.5,     0.5, 0.5, 0.5},
+	}},
+	tiles = {"technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png", "technology_ladder.png"},
+	walkable = true,
 	climbable = true,
-  groups = {paffly=2, mechanic=1, oddly_breakable_by_hand=1},
-  on_punch = metal_punch,
-  sounds = metal_footstep,
+	groups = {cracky=1,mechanic=1},
+	--on_punch = metal_punch,
+	sounds = metal_footstep,
 })
 
