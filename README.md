@@ -1,7 +1,10 @@
 minetest-technology
 ===================
 
-A minetest mod which provide some hi-tech stuff : flat screen, elevators, aircrafts, bronze structures, concrete, ...
+A minetest mod which provide some hi-tech stuff : flat screen, elevators, aircrafts, overall plans, bronze structures, concrete, ...
+
+![bronzee structures](https://forum.minetest.net/download/file.php?id=14493)
+![patroller](https://forum.minetest.net/download/file.php?id=14495)
 
 Install
 =======
