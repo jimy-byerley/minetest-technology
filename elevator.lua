@@ -143,8 +143,8 @@ local elevator_mark_height = 1.5
 function elevator:regenerate_marks()
 	local y = self.object:getyaw()
 	local p = self.object:getpos()
-	rail_x = p.x + (elevator_radius+1) * math.cos(y)	-- rail on the side
-	rail_z = p.z + (elevator_radius+1) * math.sin(y)
+	rail_x = p.x + (elevator_radius+0.5) * math.cos(y)	-- rail on the side
+	rail_z = p.z + (elevator_radius+0.5) * math.sin(y)
 	rail_y = p.y+elevator_mark_height+1
 	while minetest.get_node({x=rail_x, y=rail_y, z=rail_z}).name == elevator_rail do
 		for i,place in pairs(elevator_marks_slots) do
