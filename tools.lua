@@ -68,9 +68,9 @@ minetest.register_node("technology:jackhammer", {
     		inventory:add_item("main", nodename)
     	end
 		local toplay = {
-			gain = 3.0,
+			gain = 2.0,
 			pos = pointed_thing.above,
-			max_hear_distance = 600,
+			max_hear_distance = 50,
 			loop = false,
 		}
 		minetest.sound_play("jackhammer_sound", toplay)

@@ -70,8 +70,8 @@ local metal_punch = function(pos, puncher)
 end
 
 local metal_footstep = {
-	footstep = {name="metal_footstep", gain=0.8},
-	dig = {name="metal_footstep", gain = 0.8},
+	footstep = {name="metal_footstep", gain=0.3},
+	dig = {name="metal_footstep", gain = 0.3},
 }
 
 minetest.register_node("technology:armature_h", {
