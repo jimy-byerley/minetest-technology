@@ -2,7 +2,7 @@ local elevator = {
 	hp_max = 400,
 	can_punch = true,
 	physical = true,
-	collisionbox = {-1, -0.5, -1, 1, 2.5, 1},
+	collisionbox = {-0.95, -0.5, -0.95, 0.95, 2.5, 0.95},
 	visual = "mesh",
 	mesh = "elevator.x",
 	textures = {"technology_elevator.png"},
@@ -60,14 +60,14 @@ function elevator:on_punch(puncher, time_from_last_punch, tool_capabilities, dir
 			if #self.marks == 0 then return	end
 			if look < 0 then -- look up
 				local i=1
-				while i<=#self.marks and self.marks[i]<=p.y do i = i+1 end
-				if self.marks[i] == p.y then return end
+				while i<#self.marks and self.marks[i]<=p.y do i = i+1 end
+				if self.marks[i] <= p.y then return end
 				self.target = self.marks[i]
 				self:set_direction(1)
 			else  -- look down
 				local i=#self.marks
-				while i>0 and self.marks[i]>=p.y do i = i-1 end
-				if self.marks[i] == p.y then return end
+				while i>1 and self.marks[i]>=p.y do i = i-1 end
+				if self.marks[i] >= p.y then return end
 				self.target = self.marks[i]
 				self:set_direction(-1)
 			end
@@ -143,13 +143,19 @@ local elevator_mark_height = 1.5
 function elevator:regenerate_marks()
 	local y = self.object:getyaw()
 	local p = self.object:getpos()
+	self.marks = {}
 	rail_x = p.x + (elevator_radius+0.5) * math.cos(y)	-- rail on the side
 	rail_z = p.z + (elevator_radius+0.5) * math.sin(y)
 	rail_y = p.y+elevator_mark_height+1
+	print("regen marks")
+	print("start from "..rail_x..", "..rail_y..", "..rail_z)
+	print("here we got "..minetest.get_node({x=rail_x, y=rail_y, z=rail_z}).name)
 	while minetest.get_node({x=rail_x, y=rail_y, z=rail_z}).name == elevator_rail do
+		print("look at "..rail_y)
 		for i,place in pairs(elevator_marks_slots) do
 			if minetest.get_node({x=p.x + place[1], y=rail_y, z=p.z + place[2]}).name == elevator_mark then
-				table.insert(self.marks, rail_y-elevator_mark_height)
+				table.insert(self.marks, math.floor(rail_y - elevator_mark_height) + 0.5)
+				print("insert mark at "..rail_y-elevator_mark_height)
 				break
 			end
 		end
@@ -157,9 +163,11 @@ function elevator:regenerate_marks()
 	end
 	rail_y = p.y+elevator_mark_height-1
 	while minetest.get_node({x=rail_x, y=rail_y, z=rail_z}).name == elevator_rail do
+		print("look at "..rail_y)
 		for i,place in pairs(elevator_marks_slots) do
 			if minetest.get_node({x=p.x + place[1], y=rail_y, z=p.z + place[2]}).name == elevator_mark then
-				table.insert(self.marks, 1, rail_y-elevator_mark_height)
+				table.insert(self.marks, 1, math.floor(rail_y - elevator_mark_height) + 0.5)
+				print("insert mark at "..rail_y-elevator_mark_height)
 				break
 			end
 		end
